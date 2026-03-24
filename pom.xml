@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>claude-summarizer</artifactId>
+    <artifactId>claude-fact-checker</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Claude Text Summarizer</name>
-    <description>A simple REST API that uses Claude to summarize text</description>
+    <name>Claude Fact Checker</name>
+    <description>Multi-agent fact-checking and summarization app powered by Claude API</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -20,23 +20,23 @@
     </parent>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Web (gives us REST endpoints) -->
+        <!-- Spring Boot Web (REST endpoints + serves static files) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- For making HTTP calls to the Claude API -->
+        <!-- WebFlux — only for the non-blocking WebClient HTTP client -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
-        <!-- Lombok - reduces boilerplate (getters, setters, constructors) -->
+        <!-- Lombok - reduces boilerplate -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
